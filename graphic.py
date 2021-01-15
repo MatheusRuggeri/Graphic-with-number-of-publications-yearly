@@ -64,7 +64,7 @@ fig, ax = plt.subplots()
 ax.plot(year_list, results_list)
 #ax.plot(secondXPlot, secondYPlot)
 
-ax.set(xlabel='Resultados', ylabel='Ano', title=input_text_bk + ' publications between ' + str(start_year) + ' and ' +  str(end_year))
+ax.set(xlabel='Ano', ylabel='Publicações', title=input_text_bk + ' publications between ' + str(start_year) + ' and ' +  str(end_year))
 ax.grid()
 
 plt.xticks(np.arange(min(year_list), max(year_list)+1, 1))
