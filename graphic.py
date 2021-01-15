@@ -12,6 +12,7 @@ BASE_URL = 'https://scholar.google.com.br/scholar?q='
 
 print('What subject do you want to google?', end='')
 input_text = input()
+input_text_bk = input_text
 input_text = input_text.replace(' ', '+')
 
 print('What is the starting year ?', end='')
@@ -63,13 +64,13 @@ fig, ax = plt.subplots()
 ax.plot(year_list, results_list)
 #ax.plot(secondXPlot, secondYPlot)
 
-ax.set(xlabel='Resultados', ylabel='Ano', title=input_text + ' publications between ' + str(start_year) + ' and ' +  str(end_year))
+ax.set(xlabel='Resultados', ylabel='Ano', title=input_text_bk + ' publications between ' + str(start_year) + ' and ' +  str(end_year))
 ax.grid()
 
 plt.xticks(np.arange(min(year_list), max(year_list)+1, 1))
 
 plt.gcf().set_size_inches(8, 5)
-fig.savefig('export' + os.sep + input_text + '-' + str(start_year) + '-' +  str(end_year) + ".png", dpi = 300)
+fig.savefig('export' + os.sep + input_text_bk + '-' + str(start_year) + '-' +  str(end_year) + ".png", dpi = 300)
 #plt.close(fig)
 plt.show()
     
